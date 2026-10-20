@@ -1,0 +1,1621 @@
+/* ============================================================
+   GLOBAL
+============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #080d12;
+  color: #dce8f2;
+  font-family:
+    "Courier New",
+    Consolas,
+    monospace;
+
+  overflow-x: hidden;
+}
+
+
+/* ============================================================
+   APP
+============================================================ */
+
+.navis-app {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 70% 15%,
+      rgba(0, 229, 255, 0.035),
+      transparent 30%
+    ),
+    #080d12;
+
+  padding:
+    20px 30px 25px;
+}
+
+
+/* ============================================================
+   TOP BAR
+============================================================ */
+
+.topbar {
+  height: 65px;
+
+  border-bottom:
+    1px solid #1c2933;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+}
+
+.brand {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+}
+
+.brand-symbol {
+  width:
+    46px;
+
+  height:
+    46px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid #00d9ef;
+
+  color:
+    #00eaff;
+
+  font-size:
+    27px;
+
+  box-shadow:
+    0 0 15px
+    rgba(0, 225, 255, 0.12);
+}
+
+.brand-text h1 {
+  color:
+    #f2f7fb;
+
+  font-size:
+    24px;
+
+  letter-spacing:
+    2px;
+}
+
+.brand-text span {
+  display:
+    block;
+
+  margin-top:
+    3px;
+
+  color:
+    #6e91ad;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    2px;
+}
+
+.system-info {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    17px;
+
+  color:
+    #7390a7;
+
+  font-size:
+    11px;
+}
+
+.system-online {
+  color:
+    #b7cbd9;
+}
+
+.online-light {
+  display:
+    inline-block;
+
+  width:
+    9px;
+
+  height:
+    9px;
+
+  margin-right:
+    9px;
+
+  border-radius:
+    50%;
+
+  background:
+    #35ee9a;
+
+  box-shadow:
+    0 0 12px
+    #35ee9a;
+}
+
+.unit-id {
+  border-left:
+    1px solid #23323e;
+
+  padding-left:
+    17px;
+}
+
+.unit-number {
+  border:
+    1px solid #32424e;
+
+  padding:
+    8px 10px;
+
+  color:
+    #a7c2d6;
+}
+
+
+/* ============================================================
+   COMMAND HEADER
+============================================================ */
+
+.command-header {
+  min-height:
+    120px;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+}
+
+.command-label,
+.section-label {
+  color:
+    #638ba8;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    1.4px;
+}
+
+.command-header h2 {
+  margin-top:
+    12px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    38px;
+
+  font-weight:
+    300;
+
+  color:
+    #eef7fc;
+}
+
+.command-header h2 span {
+  color:
+    #00dff4;
+}
+
+.header-actions {
+  display:
+    flex;
+
+  gap:
+    14px;
+}
+
+.demo-btn,
+.camera-connect {
+  height:
+    47px;
+
+  padding:
+    0 17px;
+
+  border:
+    1px solid #30424f;
+
+  background:
+    #0c131a;
+
+  color:
+    #b9ccd9;
+
+  font-family:
+    inherit;
+
+  font-size:
+    11px;
+
+  cursor:
+    pointer;
+}
+
+.demo-btn.active {
+  color:
+    #42efa0;
+
+  border-color:
+    #267b60;
+}
+
+.toggle {
+  display:
+    inline-flex;
+
+  width:
+    23px;
+
+  height:
+    13px;
+
+  margin-left:
+    10px;
+
+  vertical-align:
+    middle;
+
+  background:
+    #334650;
+
+  border-radius:
+    20px;
+}
+
+.toggle i {
+  width:
+    9px;
+
+  height:
+    9px;
+
+  margin:
+    2px;
+
+  background:
+    #42efa0;
+
+  border-radius:
+    50%;
+}
+
+
+/* ============================================================
+   TELEMETRY
+============================================================ */
+
+.telemetry-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    15px;
+
+  margin-bottom:
+    17px;
+}
+
+.telemetry-card {
+  min-height:
+    140px;
+
+  padding:
+    25px;
+
+  background:
+    #0d141b;
+
+  border:
+    1px solid #26343f;
+
+  position:
+    relative;
+}
+
+.telemetry-card::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  width:
+    2px;
+}
+
+.telemetry-card.cyan::before {
+  background:
+    #00d8ed;
+}
+
+.telemetry-card.yellow::before {
+  background:
+    #ffbd3e;
+}
+
+.telemetry-card.pink::before {
+  background:
+    #ff3f7c;
+}
+
+.telemetry-card.green::before {
+  background:
+    #3cf29d;
+}
+
+.telemetry-label {
+  color:
+    #7594ad;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    1.2px;
+}
+
+.telemetry-main {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    18px;
+
+  margin-top:
+    11px;
+}
+
+.telemetry-icon {
+  font-size:
+    28px;
+}
+
+.telemetry-card.cyan
+.telemetry-icon {
+  color:
+    #00e4f4;
+}
+
+.telemetry-card.yellow
+.telemetry-icon {
+  color:
+    #ffbe3f;
+}
+
+.telemetry-card.pink
+.telemetry-icon {
+  color:
+    #ff3f7d;
+}
+
+.telemetry-card.green
+.telemetry-icon {
+  color:
+    #3cf29d;
+}
+
+.telemetry-main strong {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    31px;
+
+  color:
+    #f1f7fa;
+}
+
+.telemetry-sub {
+  margin-left:
+    41px;
+
+  margin-top:
+    8px;
+
+  color:
+    #536d83;
+
+  font-size:
+    10px;
+}
+
+
+/* ============================================================
+   DASHBOARD
+============================================================ */
+
+.dashboard-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 2.1fr)
+    minmax(330px, 0.9fr);
+
+  gap:
+    17px;
+}
+
+
+/* ============================================================
+   MAP PANEL
+============================================================ */
+
+.map-panel,
+.vision-panel,
+.activity-panel,
+.mini-panel {
+  background:
+    #0d141b;
+
+  border:
+    1px solid #26343f;
+}
+
+.map-panel {
+  min-height:
+    600px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+}
+
+.panel-header {
+  min-height:
+    105px;
+
+  padding:
+    24px;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-start;
+}
+
+.panel-header h3,
+.vision-heading h3,
+.activity-panel h3 {
+  margin-top:
+    10px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    21px;
+
+  font-weight:
+    400;
+
+  color:
+    #eef5f8;
+}
+
+.live-label {
+  color:
+    #3ef29c;
+
+  font-family:
+    monospace;
+
+  font-size:
+    10px;
+
+  margin-left:
+    10px;
+}
+
+.map-legend {
+  display:
+    flex;
+
+  gap:
+    16px;
+
+  color:
+    #7d94a7;
+
+  font-size:
+    9px;
+}
+
+.map-legend span {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    5px;
+}
+
+.legend-path,
+.legend-obstacle,
+.legend-explored {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+}
+
+.legend-path {
+  background:
+    #00e2f2;
+
+  box-shadow:
+    0 0 8px #00e2f2;
+}
+
+.legend-obstacle {
+  background:
+    #ff3e7b;
+}
+
+.legend-explored {
+  background:
+    #657483;
+}
+
+.main-map {
+  width:
+    100%;
+
+  height:
+    495px;
+
+  background:
+    #0a1015;
+}
+
+
+/* ============================================================
+   MAP DARK FILTER
+============================================================ */
+
+.leaflet-tile {
+  filter:
+    brightness(0.62)
+    contrast(1.15)
+    saturate(0.7)
+    hue-rotate(165deg);
+}
+
+.leaflet-control-zoom a {
+  background:
+    #0d171e !important;
+
+  color:
+    #bcd0dd !important;
+
+  border-color:
+    #263c48 !important;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background:
+    #101920;
+
+  color:
+    #dceaf2;
+}
+
+
+/* ============================================================
+   MAP OVERLAY
+============================================================ */
+
+.map-overlay-info {
+  position:
+    absolute;
+
+  left:
+    20px;
+
+  right:
+    20px;
+
+  bottom:
+    17px;
+
+  z-index:
+    500;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-end;
+
+  pointer-events:
+    none;
+}
+
+.route-status {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  color:
+    #00e5f4;
+
+  font-size:
+    10px;
+
+  background:
+    rgba(8, 15, 20, 0.85);
+
+  padding:
+    10px 13px;
+
+  border:
+    1px solid #1c424c;
+}
+
+.route-status span:last-child {
+  color:
+    #7390a5;
+}
+
+.pulse {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    #00e5f4;
+
+  box-shadow:
+    0 0 10px #00e5f4;
+}
+
+.target-info {
+  display:
+    flex;
+
+  gap:
+    10px;
+
+  color:
+    #8298aa;
+
+  font-size:
+    9px;
+
+  background:
+    rgba(8, 15, 20, 0.85);
+
+  padding:
+    9px 12px;
+
+  border:
+    1px solid #1d303b;
+}
+
+
+/* ============================================================
+   RIGHT PANEL
+============================================================ */
+
+.right-panel {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    14px;
+}
+
+
+/* ============================================================
+   VISION
+============================================================ */
+
+.vision-panel {
+  padding:
+    24px;
+
+  min-height:
+    350px;
+}
+
+.vision-heading {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+}
+
+.simulated,
+.live-camera,
+.obstacle-mode {
+  font-size:
+    10px;
+
+  font-weight:
+    bold;
+}
+
+.simulated {
+  color:
+    #ffad3d;
+}
+
+.live-camera {
+  color:
+    #38ef9b;
+}
+
+.obstacle-mode {
+  color:
+    #ff3e79;
+}
+
+.vision-window {
+  height:
+    235px;
+
+  margin-top:
+    18px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  background:
+    radial-gradient(
+      ellipse,
+      #122d31,
+      #071116
+    );
+
+  border:
+    1px solid #243a42;
+}
+
+#camera {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  display:
+    none;
+}
+
+.vision-placeholder {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    2;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    #668896;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    1px;
+}
+
+.vision-placeholder small {
+  margin-top:
+    7px;
+
+  color:
+    #425c68;
+}
+
+.radar {
+  font-size:
+    55px;
+
+  color:
+    #00dbea;
+
+  opacity:
+    0.65;
+
+  margin-bottom:
+    12px;
+}
+
+.vision-grid {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      rgba(0, 215, 230, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 215, 230, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    30px 30px;
+
+  pointer-events:
+    none;
+}
+
+.vision-crosshair {
+  position:
+    absolute;
+
+  left:
+    53%;
+
+  top:
+    48%;
+
+  color:
+    #00ddeb;
+
+  font-size:
+    27px;
+
+  z-index:
+    5;
+}
+
+.vision-box {
+  position:
+    absolute;
+
+  z-index:
+    6;
+
+  width:
+    82px;
+
+  height:
+    115px;
+
+  border:
+    1px solid;
+}
+
+.vision-box span {
+  position:
+    absolute;
+
+  top:
+    -24px;
+
+  left:
+    -1px;
+
+  padding:
+    6px;
+
+  font-size:
+    8px;
+
+  white-space:
+    nowrap;
+}
+
+.vision-box b {
+  display:
+    block;
+
+  margin-top:
+    2px;
+}
+
+.vision-box.person {
+  left:
+    18%;
+
+  top:
+    27%;
+
+  border-color:
+    #ff3e7b;
+}
+
+.vision-box.person span {
+  background:
+    #ff3e7b;
+
+  color:
+    #111;
+}
+
+.vision-box.object {
+  right:
+    18%;
+
+  top:
+    43%;
+
+  width:
+    90px;
+
+  height:
+    90px;
+
+  border-color:
+    #ffbd3e;
+}
+
+.vision-box.object span {
+  background:
+    #ffbd3e;
+
+  color:
+    #111;
+}
+
+.vision-bottom {
+  position:
+    absolute;
+
+  bottom:
+    8px;
+
+  left:
+    10px;
+
+  right:
+    10px;
+
+  z-index:
+    8;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  color:
+    #748c99;
+
+  font-size:
+    8px;
+}
+
+.camera-enable {
+  width:
+    100%;
+
+  margin-top:
+    10px;
+
+  padding:
+    10px;
+
+  background:
+    #0b131a;
+
+  border:
+    1px solid #2a3e4b;
+
+  color:
+    #9db5c4;
+
+  font-family:
+    inherit;
+
+  font-size:
+    9px;
+
+  cursor:
+    pointer;
+}
+
+.vision-status {
+  margin-top:
+    8px;
+
+  color:
+    #5f8091;
+
+  font-size:
+    9px;
+}
+
+.vision-status.danger {
+  color:
+    #ff3e79;
+}
+
+
+/* ============================================================
+   ACTIVITY
+============================================================ */
+
+.activity-panel {
+  padding:
+    21px;
+
+  min-height:
+    225px;
+}
+
+.activity-header {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+}
+
+.activity-header > span {
+  color:
+    #607c91;
+
+  font-size:
+    9px;
+}
+
+.activity-panel h3 {
+  margin-top:
+    9px;
+
+  margin-bottom:
+    14px;
+}
+
+.event-log {
+  max-height:
+    145px;
+
+  overflow-y:
+    auto;
+}
+
+.event {
+  display:
+    flex;
+
+  gap:
+    10px;
+
+  padding:
+    10px 0;
+
+  border-bottom:
+    1px solid #17242d;
+}
+
+.event-icon {
+  width:
+    26px;
+
+  height:
+    26px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    #00ddea;
+
+  border:
+    1px solid #24505a;
+
+  font-size:
+    10px;
+}
+
+.event-content {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    4px;
+}
+
+.event-content strong {
+  color:
+    #86a8be;
+
+  font-size:
+    9px;
+
+  font-weight:
+    normal;
+}
+
+.event-content span {
+  color:
+    #40596c;
+
+  font-size:
+    8px;
+}
+
+.empty-log {
+  color:
+    #405969;
+
+  font-size:
+    9px;
+}
+
+
+/* ============================================================
+   MINI PANEL
+============================================================ */
+
+.mini-panel {
+  padding:
+    15px 20px;
+}
+
+.mini-row {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  padding:
+    7px 0;
+
+  border-bottom:
+    1px solid #17242d;
+
+  font-size:
+    9px;
+}
+
+.mini-row:last-child {
+  border-bottom:
+    none;
+}
+
+.mini-row span {
+  color:
+    #557286;
+}
+
+.mini-row strong {
+  color:
+    #8eb3c8;
+
+  font-size:
+    9px;
+}
+
+
+/* ============================================================
+   BOTTOM CONTROL BAR
+============================================================ */
+
+.control-bar {
+  margin-top:
+    16px;
+
+  min-height:
+    80px;
+
+  background:
+    #0c131a;
+
+  border:
+    1px solid #26343f;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  padding:
+    14px 18px;
+}
+
+.navigation-state {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+}
+
+.state-dot {
+  width:
+    9px;
+
+  height:
+    9px;
+
+  border-radius:
+    50%;
+}
+
+.state-dot.paused {
+  background:
+    #6d7c89;
+}
+
+.state-dot.running {
+  background:
+    #28efa0;
+
+  box-shadow:
+    0 0 12px #28efa0;
+}
+
+.state-dot.emergency {
+  background:
+    #ff3e70;
+
+  box-shadow:
+    0 0 12px #ff3e70;
+}
+
+.navigation-state strong {
+  display:
+    block;
+
+  color:
+    #dceaf2;
+
+  font-size:
+    10px;
+}
+
+.navigation-state span {
+  display:
+    block;
+
+  margin-top:
+    5px;
+
+  color:
+    #536d80;
+
+  font-size:
+    9px;
+}
+
+.control-buttons {
+  display:
+    flex;
+
+  gap:
+    9px;
+}
+
+.control {
+  height:
+    43px;
+
+  padding:
+    0 17px;
+
+  background:
+    #0c151c;
+
+  border:
+    1px solid #2c3d49;
+
+  color:
+    #a9bdca;
+
+  font-family:
+    inherit;
+
+  font-size:
+    10px;
+
+  cursor:
+    pointer;
+}
+
+.control:hover {
+  border-color:
+    #3c6577;
+
+  color:
+    #e4f5fc;
+}
+
+.control.start {
+  color:
+    #00e0ee;
+
+  border-color:
+    #168b9a;
+}
+
+.control.emergency {
+  color:
+    #ff4b7b;
+
+  border-color:
+    #773047;
+}
+
+.control.emergency:hover {
+  background:
+    #32121f;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (
+  max-width: 1100px
+) {
+
+  .telemetry-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .right-panel {
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .mini-panel {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+
+@media (
+  max-width: 700px
+) {
+
+  .navis-app {
+    padding:
+      12px;
+  }
+
+  .topbar {
+    height:
+      auto;
+
+    padding:
+      10px 0;
+
+    gap:
+      15px;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+
+  .system-info {
+    width:
+      100%;
+
+    justify-content:
+      flex-start;
+  }
+
+  .command-header {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    padding:
+      25px 0;
+
+    gap:
+      20px;
+  }
+
+  .command-header h2 {
+    font-size:
+      29px;
+  }
+
+  .telemetry-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .right-panel {
+    display:
+      flex;
+  }
+
+  .control-bar {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      15px;
+  }
+
+  .control-buttons {
+    flex-wrap:
+      wrap;
+  }
+
+  .control {
+    flex:
+      1;
+  }
+
+  .map-panel {
+    min-height:
+      500px;
+  }
+
+  .main-map {
+    height:
+      400px;
+  }
+
+}
